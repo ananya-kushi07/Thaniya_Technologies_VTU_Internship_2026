@@ -1,0 +1,12 @@
+{
+  "name": "backend-day11",
+  "version": "1.0.0",
+  "description": "REST API development using Node.js and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
