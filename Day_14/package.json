@@ -1,0 +1,16 @@
+{
+  "name": "day_14",
+  "version": "1.0.0",
+  "description": "Today, I learned how error handling works in backend applications using Express.js. Instead of allowing the server to crash or return unclear responses, proper error handling ensures that meaningful responses are sent to the client.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
