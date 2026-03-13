@@ -1,0 +1,13 @@
+{
+  "name": "backend-day16",
+  "version": "1.0.0",
+  "description": "MongoDB fundamentals practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0"
+  }
+}
