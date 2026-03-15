@@ -1,0 +1,5 @@
+# Day 18 – MVC Architecture in Backend Applications
+
+Today, I learned how backend applications can be structured using the MVC (Model–View–Controller) architecture. I explored how separating application logic into models, controllers, and routes helps organize the code and makes it easier to manage larger backend systems. I practiced implementing this structure in a Node.js and Express application while connecting it to MongoDB for storing and managing data.
+
+From today’s learning, I gained a clearer understanding of how MVC architecture improves code maintainability and scalability. By separating responsibilities between models, controllers, and routes, backend applications become more organized and easier to extend in the future. This practice helped me understand how real-world backend projects structure their code effectively.
