@@ -1,0 +1,5 @@
+# Day 22 – CORS in Backend Applications
+
+Today, I learned about CORS (Cross-Origin Resource Sharing) and how it affects communication between frontend and backend applications. I explored how browsers restrict requests when the frontend and backend run on different origins, such as different ports or domains. I practiced enabling CORS in a Node.js and Express application using middleware so that APIs can be accessed from different origins.
+
+From today’s learning, I understood why CORS errors occur and how they can be resolved in backend applications. I learned how enabling CORS allows secure communication between frontend frameworks like React and backend APIs. I also gained knowledge about controlling access using specific origins instead of allowing all requests, which improves security. This helped me understand an important concept used in real-world web applications.
