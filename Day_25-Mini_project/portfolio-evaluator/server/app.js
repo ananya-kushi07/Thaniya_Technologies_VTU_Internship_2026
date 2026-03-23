@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
+import profileRoutes from "./routes/profileRoutes.js";
+
 
 // Load env FIRST
 dotenv.config();
@@ -14,7 +16,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
-
+app.use("/api/profile", profileRoutes);
 // Test route
 app.get("/", (req, res) => {
   res.send("API is running 🚀");
