@@ -1,9 +1,10 @@
 export const calculateScores = (user, repos) => {
-  // ---------------- ACTIVITY ----------------
+  
+    
   const repoCount = repos.length;
   const activityScore = Math.min(repoCount * 2, 25);
 
-  // ---------------- CODE QUALITY ----------------
+ 
   let qualityPoints = 0;
 
   repos.forEach((repo) => {
