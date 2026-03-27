@@ -8,10 +8,12 @@ const ReportSchema = new mongoose.Schema({
   languages: Array,
   scores: Object,
 
+  shareUrl: String, // ✅ important
+
   createdAt: { type: Date, default: Date.now },
   expiresAt: {
     type: Date,
-    default: () => Date.now() + 24 * 60 * 60 * 1000, // 24 hrs
+    default: () => Date.now() + 24 * 60 * 60 * 1000,
     index: { expires: 0 },
   },
 });

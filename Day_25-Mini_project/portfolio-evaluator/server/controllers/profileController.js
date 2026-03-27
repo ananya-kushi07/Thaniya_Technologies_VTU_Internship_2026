@@ -11,10 +11,16 @@ export const fetchProfile = async (req, res) => {
 
     if (existing) {
       console.log("⚡ Returning cached data");
+
       return res.json({
         success: true,
         cached: true,
-        ...existing._doc,
+        username: existing.username,
+        profile: existing.profile,
+        topRepos: existing.topRepos,
+        languages: existing.languages,
+        scores: existing.scores,
+        shareUrl: existing.shareUrl,
       });
     }
 
@@ -23,6 +29,7 @@ export const fetchProfile = async (req, res) => {
 
     const scores = calculateScores(data.user, data.repos);
 
+    // ✅ Clean profile
     const profile = {
       username: data.user.login,
       avatar: data.user.avatar_url,
@@ -31,6 +38,7 @@ export const fetchProfile = async (req, res) => {
       publicRepos: data.user.public_repos,
     };
 
+    // ✅ Top repos (sorted by stars)
     const topRepos = data.repos
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .slice(0, 6)
@@ -39,9 +47,10 @@ export const fetchProfile = async (req, res) => {
         stars: repo.stargazers_count,
         forks: repo.forks_count,
         language: repo.language,
-        url: repo.html_url,
+        shareUrl: repo.html_url,
       }));
 
+    // ✅ Language distribution
     const languageCount = {};
 
     data.repos.forEach((repo) => {
@@ -58,22 +67,31 @@ export const fetchProfile = async (req, res) => {
       percent: ((languageCount[lang] / total) * 100).toFixed(1),
     }));
 
+    // ✅ Final report data
     const reportData = {
       username,
       profile,
       topRepos,
       languages,
       scores,
+      shareUrl: `/report/${username}`, // 🔥 Shareable URL
     };
 
-    // ✅ 3. Save to DB
+    // ✅ Save to MongoDB
     const newReport = await Report.create(reportData);
 
+    // ✅ Send clean response
     res.json({
       success: true,
       cached: false,
-      ...newReport._doc,
+      username: newReport.username,
+      profile: newReport.profile,
+      topRepos: newReport.topRepos,
+      languages: newReport.languages,
+      scores: newReport.scores,
+      shareUrl: newReport.shareUrl,
     });
+
   } catch (error) {
     res.status(404).json({
       success: false,
