@@ -1,13 +1,14 @@
 function RepoList({ repos }) {
   return (
     <div>
-      <h3>Top Repositories</h3>
+      <h3>⭐ Top Repositories</h3>
+
       {repos.map((repo, i) => (
-        <div key={i}>
+        <div key={i} style={{ margin: "10px 0" }}>
           <a href={repo.url} target="_blank">
             {repo.name}
           </a>
-          ⭐ {repo.stars}
+          <span> ⭐ {repo.stars}</span>
         </div>
       ))}
     </div>

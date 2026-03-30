@@ -18,16 +18,24 @@ function Home() {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h1>Developer Portfolio Evaluator 🚀</h1>
+    <div className="container">
+      <h1>🚀 Developer Portfolio Evaluator</h1>
 
       <SearchBar onSearch={handleSearch} />
 
       {data && (
         <>
-          <ProfileCard profile={data.profile} scores={data.scores} />
-          <RepoList repos={data.topRepos} />
-          <LanguageChart languages={data.languages} />
+          <div className="card">
+            <ProfileCard profile={data.profile} scores={data.scores} />
+          </div>
+
+          <div className="card">
+            <RepoList repos={data.topRepos} />
+          </div>
+
+          <div className="card">
+            <LanguageChart languages={data.languages} />
+          </div>
         </>
       )}
     </div>

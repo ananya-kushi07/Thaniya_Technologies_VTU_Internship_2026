@@ -3,21 +3,15 @@ import { useState } from "react";
 function SearchBar({ onSearch }) {
   const [username, setUsername] = useState("");
 
-  const handleSubmit = () => {
-    if (username.trim()) {
-      onSearch(username);
-    }
-  };
-
   return (
-    <div>
+    <div style={{ marginBottom: "20px" }}>
       <input
         type="text"
         placeholder="Enter GitHub username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button onClick={handleSubmit}>Evaluate</button>
+      <button onClick={() => onSearch(username)}>Evaluate</button>
     </div>
   );
 }
