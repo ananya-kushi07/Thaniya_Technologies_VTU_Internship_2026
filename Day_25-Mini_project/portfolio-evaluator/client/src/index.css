@@ -46,3 +46,8 @@ a {
   color: #38bdf8;
   text-decoration: none;
 }
+.loader {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #38bdf8;
+}

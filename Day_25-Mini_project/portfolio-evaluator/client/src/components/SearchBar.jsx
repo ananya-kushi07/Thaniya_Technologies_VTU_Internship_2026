@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, loading }) {
   const [username, setUsername] = useState("");
 
   return (
@@ -10,8 +10,15 @@ function SearchBar({ onSearch }) {
         placeholder="Enter GitHub username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        disabled={loading}
       />
-      <button onClick={() => onSearch(username)}>Evaluate</button>
+
+      <button
+        onClick={() => onSearch(username)}
+        disabled={loading}
+      >
+        {loading ? "Loading..." : "Evaluate"}
+      </button>
     </div>
   );
 }
