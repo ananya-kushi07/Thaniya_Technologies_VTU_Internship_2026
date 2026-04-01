@@ -53,7 +53,18 @@ function Home() {
           </div>
         </>
       )}
+
+      {data && (
+  <div className="card">
+    <h3>🔗 Share this report:</h3>
+    <p>
+      http://localhost:5173{data.shareUrl}
+    </p>
+  </div>
+)}
     </div>
+
+    
   );
 }
 
