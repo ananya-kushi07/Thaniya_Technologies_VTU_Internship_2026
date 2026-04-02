@@ -8,6 +8,7 @@ function ProfileCard({ profile, scores }) {
       />
       <h2>{profile.username}</h2>
       <p>Followers: {profile.followers}</p>
+      <p>{profile.bio}</p>
 
       <h3>🎯 Score: {scores.overall}</h3>
     </div>

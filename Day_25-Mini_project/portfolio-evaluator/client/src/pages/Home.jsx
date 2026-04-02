@@ -54,12 +54,24 @@ function Home() {
         </>
       )}
 
-      {data && (
+
+{data && (
   <div className="card">
     <h3>🔗 Share this report:</h3>
-    <p>
+    <p id="link">
       http://localhost:5173{data.shareUrl}
     </p>
+
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(
+          `http://localhost:5173${data.shareUrl}`
+        );
+        alert("Link copied!");
+      }}
+    >
+      Copy Link
+    </button>
   </div>
 )}
     </div>
