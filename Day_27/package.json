@@ -1,0 +1,12 @@
+{
+  "name": "backend-day28",
+  "version": "1.0.0",
+  "description": "Pagination in Express API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
